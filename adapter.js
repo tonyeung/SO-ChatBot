@@ -2,7 +2,6 @@ if ( bot.adapter ) {
 	IO.unregister( 'output', bot.adapter.out.build );
 	IO.unregister( 'afteroutput', bot.adapter.out.send );
 }
-
 bot.invocationPattern = '';
 
 bot.adapter = {
@@ -11,11 +10,9 @@ bot.adapter = {
 	escape     : $D,
 	reply      : $D,
 	directreply: $D,
-
 	//h4x :D
 	codify : bot.adapter.codify,
 	link   : bot.adapter.link
-
 };
 
 var input = bot.adapter.in = {
@@ -30,7 +27,7 @@ var input = bot.adapter.in = {
 	},
 
 	listen : function ( e ) {
-		if ( e.which !== this.ENTER ) {
+		if ( !this.valid(e) ) {
 			return;
 		}
 		this.inpt.disabled = true;
@@ -55,9 +52,12 @@ var input = bot.adapter.in = {
 	reset : function () {
 		this.inpt.value = '';
 		this.inpt.disabled = false;
+	},
+
+	valid : function ( e ) {
+		return e.which === this.ENTER && !this.inpt.disabled && this.inpt.value;
 	}
 };
-
 
 var output = bot.adapter.out = {
 	messages: [],
