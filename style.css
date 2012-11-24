@@ -48,11 +48,12 @@ code {
 	padding : 4px;
 	border-radius : 3px;
 	margin-bottom : 6px;
-	color : green;
+	color : #a00;
 }
 .message.bot {
 	background-image : url(
 		http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/low_contrast_linen.png);
+	color : yellow;
 }
 
 .message .text {
