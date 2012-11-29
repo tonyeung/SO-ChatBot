@@ -90,8 +90,8 @@ input.inpt.focus();
 input.init();
 output.loopage();
 
-IO.register('output', output.build, output);
-IO.register('afteroutput', output.send, output);
+IO.register( 'output', output.build, output );
+IO.register( 'afteroutput', output.send, output );
 
 function $D ( x ) {
 	return x;
