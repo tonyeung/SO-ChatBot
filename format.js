@@ -8,7 +8,8 @@ var format = {
 
 	add  : function ( msg, is_user ) {
 		//too lazy, already wrote all the is_bot
-		this.is_bot = !is_user;
+		//the strict check is laziness induced, too
+		this.is_bot = is_user !== true;
 		chat.appendChild( this.wrap(msg) );
 	},
 
@@ -32,17 +33,17 @@ var format = {
 	},
 
 	text : function ( md ) {
-		var elem = document.createElement( 'div' );
-		elem.className = 'text';
+		var ret = document.createElement( 'div' );
+		ret.className = 'text';
 
 		if ( this.is_bot ) {
-			elem.appendChild( mini_md.parse(md) );
+			ret.appendChild( mini_md.parse(md) );
 		}
 		else {
-			elem.textContent = md;
+			ret.textContent = md;
 		}
 
-		return elem;
+		return ret;
 	},
 
 	ident : function () {
