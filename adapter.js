@@ -6,6 +6,7 @@ bot.invocationPattern = '';
 
 bot.adapter = {
 	roomid     : 0,
+	site       : 'stackoverflow',
 	transform  : $D,
 	escape     : $D,
 	reply      : $D,

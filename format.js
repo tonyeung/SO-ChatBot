@@ -163,9 +163,8 @@ var fragger = {
 		if ( begin === end ) {
 			return;
 		}
-		var node = document.createTextNode();
-		node.data = str.slice( begin, end );
 
+		var node = document.createTextNode( str.slice(begin, end) );
 		this.cur_root.appendChild( node );
 	},
 
