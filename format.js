@@ -6,11 +6,11 @@ var format = {
 		user : 'http://i.imgur.com/S4qPd.jpg'
 	},
 
-	add  : function ( msg, is_user ) {
+	add : function ( msg, is_user ) {
 		//too lazy, already wrote all the is_bot
 		//the strict check is laziness induced, too
 		this.is_bot = is_user !== true;
-		chat.appendChild( this.wrap(msg) );
+		this.chat.appendChild( this.wrap(msg) );
 	},
 
 	wrap : function ( msg ) {
@@ -79,20 +79,18 @@ var mini_md = {
 		return frag.root;
 	},
 
-	link : function ( $0, text, href ) {
+	link : function ( groups ) {
 		var link = document.createElement( 'a' );
 		link.target = '_blank';
-		link.textContent = text;
-		link.href = href ? href : text;
+		link.textContent = groups[0];
+		link.href = groups[1] ? groups[1] : groups[0];
 
 		return link;
 	},
 
-	codify : function ( $0, text ) {
-		//$0 existing means it's a regexp match, not a block-codify
-		var tag = $0 ? 'code' : 'pre';
-		var code = document.createElement( tag );
-		code.textContent = text;
+	codify : function ( groups ) {
+		var code = document.createElement( 'code' );
+		code.textContent = groups[1];
 
 		return code;
 	},
@@ -147,12 +145,13 @@ var fragger = {
 
 	actual_replace : function ( cb, match ) {
 		var args   = [].slice.call( arguments ),
+			groups = args.slice( 1, -2 ),
 			str    = args[ args.length - 1 ],
 			offset = args[ args.length - 2 ];
 
 		this.append_text( str, this.last_index, offset );
 
-		var node = cb.apply( null, args.slice(1) );
+		var node = cb.apply( null, [groups, str, offset] );
 		if ( node && node.nodeType ) {
 			this.cur_root.appendChild( node );
 			this.last_index = offset + match.length;

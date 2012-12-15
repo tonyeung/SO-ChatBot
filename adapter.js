@@ -9,11 +9,11 @@ bot.adapter = {
 	site       : 'stackoverflow',
 	transform  : $D,
 	escape     : $D,
-	reply      : $D,
-	directreply: $D,
 	//h4x :D
-	codify : bot.adapter.codify,
-	link   : bot.adapter.link
+	reply      : bot.adapter.reply,
+	directreply: bot.adapter.directreply,
+	codify     : bot.adapter.codify,
+	link       : bot.adapter.link
 };
 
 var input = bot.adapter.in = {
