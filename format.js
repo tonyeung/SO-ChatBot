@@ -66,7 +66,7 @@ var mini_md = {
 
 		//code check
 		if ( this.message.slice(0, 4) === this.tab ) {
-			return this.codify( null, this.message );
+			return this.codify( [,this.message] );
 		}
 
 		var frag = fragger.new();
