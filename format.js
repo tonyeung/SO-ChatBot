@@ -82,8 +82,8 @@ var mini_md = {
 	link : function ( groups ) {
 		var link = document.createElement( 'a' );
 		link.target = '_blank';
-		link.textContent = groups[0];
-		link.href = groups[1] ? groups[1] : groups[0];
+		link.textContent = groups[1];
+		link.href = groups[2] ? groups[2] : groups[1];
 
 		return link;
 	},
