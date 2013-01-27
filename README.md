@@ -10,3 +10,5 @@ $ node test_message.js
 ```
 
 And it's done.
+
+Huge props to @copy for making it possible. I <3 you.
