@@ -8,18 +8,6 @@ var http = require( 'http' ),
 	qs   = require( 'querystring' ),
 	util = require('util');
 
-var cookieString = (function () {
-	return Object.keys( data.cookies )
-		.map( cookifier, '' )
-		.join( ';' );
-
-	function cookifier ( cookie ) {
-		var value = data.cookies[cookie];
-
-		return util.format( '%s=%s', cookie, value );
-	}
-})();
-
 var request = http.request({
 	hostname : 'chat.stackoverflow.com',
 	method : 'POST',
@@ -27,7 +15,7 @@ var request = http.request({
 	headers : {
 		'User-Agent' : 'Mozilla/5.0 (X11; Linux i686; rv:17.0) Gecko/20100101 Firefox/17.0',
 		'Content-Type' : 'application/x-www-form-urlencoded',
-		Cookie : cookieString
+		Cookie : data.cookies
 	}
 }, done);
 

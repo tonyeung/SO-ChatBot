@@ -1,22 +1,27 @@
-#!/usr/bin/python
+#!/usr/bin/python2.7
 import urllib, urllib2, cookielib
 import re, json
 import sys, inspect
 
 def write_results ( jar, **kwargs ):
+    def filterderp (cookie):
+        print cookie
+        return 'stackoverflow' in cookie.domain
     #boy: mommy mommy, can you give me a cookie?
     #mom: get the cookie yourself
     #b: but I have no hands!
-    #m: no hands, no cookie!
+    #m: no hands, no cookies!
     data = {
         'headers' : dict(kwargs),
-        'cookies' : {}
+        'cookies' : ''
     }
 
-    for cookie in jar:
-        if 'stackoverflow' in cookie.domain:
-            data['cookies'][cookie.name] = cookie.value
-    print data
+    #cookies = filter(lambda cookie:  'stackoverflow' in cookie.domain,
+    cookies = filter(filterderp,
+                     jar)
+    cookieString = map(lambda cookie: '%s=%s' % ( cookie.name, cookie.value ),
+                       cookies)
+    data['cookies'] = ';'.join( cookieString );
 
     #Q: why did Susie fall off the swing?
     #A: because she didn't have arms
@@ -35,7 +40,6 @@ def load_opts ():
     return data
 
 opts = load_opts()
-
 headers = {
     'User-Agent' :
         'Mozilla/5.0 (X11; Linux i686; rv:17.0) Gecko/20100101 Firefox/17.0' }
@@ -100,10 +104,10 @@ post_data = urllib.urlencode({
 print 'writing cookies & stuff...'
 write_results( cj, fkey=fkey )
 
-#request = urllib2.Request(
+# request = urllib2.Request(
 #    'http://chat.stackoverflow.com/chats/%d/messages/new' % opts['roomid'],
 #    post_data, headers )
-#response = opener.open( request )
-#print response.read()
+# response = opener.open( request )
+# print response.read()
 
 print '=done='

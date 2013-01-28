@@ -1,5 +1,6 @@
 {
     "user_name" : "MyOpenID username",
-    "password"  : "MyOpenID password",
-    "roomid"    : 17
+    "password"  : "MyOpenId password",
+    "user_agent": "Mozilla/5.0 (X11; Linux i686; rv:17.0) Gecko/20100101 Firefox/17.0",
+    "roomid"    : 1
 }
