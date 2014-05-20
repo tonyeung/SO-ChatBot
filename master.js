@@ -1864,6 +1864,27 @@ var commands = {
 			return args;
 		}
 	},
+	lolis : function () {
+		return "Lolis are the best!";
+	},
+	! : function () {
+		if ( args && args.length ) {
+			return ":" + args + " Σ(゜ロ゜;)";
+		}
+		return "Σ(゜ロ゜;)";
+	},
+	fixit : function ( args ) {
+		if ( args && args.length ) {
+			return ":" + args + " http://youtu.be/pFRFRwkDsog";
+		}
+		return "http://youtu.be/pFRFRwkDsog";
+	},
+	gj : function ( args ) {
+		if ( args && args.length ) {
+			return ":" + args + " http://i.stack.imgur.com/qXiGn.gif";
+		}
+		return "http://i.stack.imgur.com/qXiGn.gif";
+	},
 	
 	help : function ( args ) {
 		if ( args && args.length ) {
