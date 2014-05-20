@@ -1867,7 +1867,7 @@ var commands = {
 	lolis : function () {
 		return "Lolis are the best!";
 	},
-	\! : function () {
+	! : function () {
 		if ( args && args.length ) {
 			return ":" + args + " Σ(゜ロ゜;)";
 		}
