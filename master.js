@@ -1866,13 +1866,13 @@ var commands = {
 	},
 	lolis : function () {
 		return "Lolis are the best!";
-	},
+	},/*
 	! : function () {
 		if ( args && args.length ) {
 			return ":" + args + " Σ(゜ロ゜;)";
 		}
 		return "Σ(゜ロ゜;)";
-	},
+	},*/
 	fixit : function ( args ) {
 		if ( args && args.length ) {
 			return ":" + args + " http://youtu.be/pFRFRwkDsog";
