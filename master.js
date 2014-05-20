@@ -1857,6 +1857,14 @@ bot.commandDictionary = new SuggestionDictionary( 3 );
 "use strict";
 
 var commands = {
+	
+	
+	say : function ( args ) {
+		if ( args && args.length ) {
+			return args;
+		}
+	},
+	
 	help : function ( args ) {
 		if ( args && args.length ) {
 
