@@ -7236,11 +7236,11 @@ bot.addCommand({
 	fun : function ( args ) {
 		if ( args && args.length ) {
 			if ( !isNaN(parseFloat(args)) && isFinite(args) ) {
-				return args.send( rGJ(args) );
+				return args.send( dGJ(args) );
 			}
 
 			else {
-				return args.send( dGJ(args) );
+				return args.send( rGJ(args) );
 			}			
 		}
 		return message;
@@ -7271,11 +7271,11 @@ bot.addCommand({
 	fun : function ( args ) {
 		if ( args && args.length ) {
 			if ( !isNaN(parseFloat(args)) && isFinite(args) ) {
-				return args.send( rTsukkomi(args) );
+				return args.send( dTsukkomi(args) );
 			}
 
 			else {
-				return args.send( dTsukkomi(args) );
+				return args.send( rTsukkomi(args) );
 			}			
 		}
 		return message;
