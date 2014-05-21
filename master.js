@@ -7199,7 +7199,7 @@ bot.addCommand({
 	name : 'fixit',
 	fun : function ( args ) {
 		if ( args && args.length ) {
-			if ( !isNaN(parseFloat(args)) && isFinite(args); ) {
+			if ( !isNaN(parseFloat(args)) && isFinite(args) ) {
 				return args.send( dFixit(args) );
 			}
 
