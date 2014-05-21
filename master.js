@@ -7220,6 +7220,76 @@ bot.addCommand({
 ;
 (function () {
 "use strict";
+var message = "http://i.stack.imgur.com/qXiGn.gif";
+
+
+function rGJ( name ) {
+	return bot.adapter.reply( name ) + " " + message;
+}
+
+function dGJ( messageId ) {
+	return bot.adapter.directreply( messageId ) + " " + message;
+}
+
+bot.addCommand({
+	name : 'gj',
+	fun : function ( args ) {
+		if ( args && args.length ) {
+			if ( !isNaN(parseFloat(args)) && isFinite(args) ) {
+				return args.send( rGJ(args) );
+			}
+
+			else {
+				return args.send( dGJ(args) );
+			}			
+		}
+		return message;
+	},
+	permission : {
+		del : 'NONE'
+	},
+	description : 'too lazy, submit issue with desired description'
+});
+}());
+
+;
+(function () {
+"use strict";
+var message = "Σ(゜ロ゜;)";
+
+
+function rTsukkomi( name ) {
+	return bot.adapter.reply( name ) + " " + message;
+}
+
+function dTsukkomi( messageId ) {
+	return bot.adapter.directreply( messageId ) + " " + message;
+}
+
+bot.addCommand({
+	name : '!',
+	fun : function ( args ) {
+		if ( args && args.length ) {
+			if ( !isNaN(parseFloat(args)) && isFinite(args) ) {
+				return args.send( rTsukkomi(args) );
+			}
+
+			else {
+				return args.send( dTsukkomi(args) );
+			}			
+		}
+		return message;
+	},
+	permission : {
+		del : 'NONE'
+	},
+	description : 'too lazy, submit issue with desired description'
+});
+}());
+
+;
+(function () {
+"use strict";
 var message = "Welcome to the Maid Café! The only rule is to be nice." +
 	"Welcome back, my Master! お帰りなさいませ、ご主人様! " + 
 	"We're now serving the Animu & Mangos with a side of Moé. " + 
