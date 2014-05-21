@@ -7188,11 +7188,11 @@ var message = "http://youtu.be/pFRFRwkDsog";
 
 
 function rFixit( name ) {
-	return bot.adapter.reply( name ) + " " + message; ;
+	return bot.adapter.reply( name ) + " " + message;
 }
 
 function dFixit( messageId ) {
-	return bot.adapter.directreply( messageId ) + " " + message; ;
+	return bot.adapter.directreply( messageId ) + " " + message;
 }
 
 bot.addCommand({
