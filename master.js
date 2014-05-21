@@ -7191,7 +7191,7 @@ function rFixit( name ) {
 	return bot.adapter.reply( name ) + " " + message; ;
 }
 
-function dFixit( name ) {
+function dFixit( messageId ) {
 	return bot.adapter.directreply( messageId ) + " " + message; ;
 }
 
