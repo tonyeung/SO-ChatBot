@@ -7172,7 +7172,7 @@ var message = "Lolis are the best!";
 bot.addCommand({
 	name : 'lolis',
 	fun : function ( args ) {
-		return message;
+		args.send(message);
 	},
 	permission : {
 		del : 'NONE'
