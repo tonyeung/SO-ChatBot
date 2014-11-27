@@ -6140,7 +6140,9 @@ var hammers = {
 	STAHP : 'HAMMAHTIME!',
 	HALT  : 'HAMMERZEIT!',
 	STOY  : 'ZABIVAT\' VREMYA!',
-	CAESUM: 'MALLEUS TEMPUS!'
+	CAESUM: 'MALLEUS TEMPUS!',
+	LOL: 'Did you mean loli?',
+	LULZ: 'Did you mean lolis?'
 };
 
 // /(STOP|STAHP|...)[\.!\?]?$/
