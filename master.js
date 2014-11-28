@@ -6141,8 +6141,8 @@ var hammers = {
 	HALT  : 'HAMMERZEIT!',
 	STOY  : 'ZABIVAT\' VREMYA!',
 	CAESUM: 'MALLEUS TEMPUS!',
-	LOL: 'Did you mean loli?',
-	LULZ: 'Did you mean lolis?'
+	LOL: 'Did you mean *loli*?',
+	LULZ: 'Did you mean *lolis*?'
 };
 
 // /(STOP|STAHP|...)[\.!\?]?$/
