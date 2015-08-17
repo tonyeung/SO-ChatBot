@@ -1269,7 +1269,7 @@ setTimeout(function () {
     if (bot.devMode) {
         return;
     }
-    IO.injectScript( 'https://raw.github.com/jashkenas/coffee-script/master/extras/coffee-script.js' );
+    IO.injectScript( 'https://rawgit.com/jashkenas/coffee-script/master/extras/coffee-script.js' );
 }, 1000);
 
 return function ( code, cb ) {
